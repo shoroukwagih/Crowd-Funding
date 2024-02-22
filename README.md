@@ -1,2 +1,2 @@
-# Crowdfunding
+
 # Crowd-Funding

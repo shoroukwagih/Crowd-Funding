@@ -1,0 +1,47 @@
+
+
+
+.sytle_form {
+  margin-block: 35px;
+  background-color: #fff;
+  padding: 20px;
+  filter: drop-shadow(rgba(0, 0, 0, 0.45) 1px 1px 1px);
+}
+
+.sytle_form h1{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  color:blue;
+}
+.sytle_form input ,select
+{
+  padding: 17px 15px;
+  margin-block: 20px;
+  width: 100% !important;
+  border: 2px solid black;
+}
+
+
+
+.sytle_form input:focus {
+  border: 2px solid var(--bs-primary);
+  outline: none;
+}
+
+.sytle_form button {
+  padding: 18px 38px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  background-color: blue;
+}
+
+
+
+.sytle_form label span{
+  font-size: 20px;
+  font-weight: bold;
+}

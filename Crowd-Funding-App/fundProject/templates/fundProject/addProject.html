@@ -1,0 +1,92 @@
+{%extends 'index.html'%} {%load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+
+<link rel="stylesheet" href="{% static 'css/ADDStyle.css' %}" />
+{% endblock %} {%block content%}
+<div
+  id="add"
+  class="d-flex justify-content-center align-items-center bg-denger parent"
+>
+  <div class="container parent mx-auto">
+    <form method="post" class="sytle_form" enctype="multipart/form-data">
+      {%csrf_token%}
+      <h1>Create Project</h1>
+      <input type="text" name="title" required placeholder="Project Title" />
+      <input
+        type="text"
+        name="projectDetail"
+        required
+        placeholder="Project Detail"
+      />
+
+      <div>
+        <select name="category" id="category">
+          <option value="" disabled selected hidden>Project Category</option>
+          {% for category in categories %}
+          <option value="{{ category.id }}">{{ category.categoryName }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <input
+            type="number"
+            name="target"
+            required
+            placeholder="Total Target"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <div>
+            <input type="text" name="tag" required placeholder="Tags" />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div>
+            <label for="sCampaign">
+              <span> Start Campaign </span>
+            </label>
+            <input
+              type="date"
+              id="sCampaign"
+              name="sdate"
+              required
+              placeholder="Start Date"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div>
+            <label for="eCampaign">
+              <span> End Campaign </span>
+            </label>
+            <input
+              type="date"
+              id="eCampaign"
+              name="edate"
+              required
+              placeholder="End Date"
+            />
+          </div>
+        </div>
+      </div>
+
+      <input
+        type="file"
+        multiple
+        name="projectimage[]"
+        required
+        required
+        placeholder="Choose Image"
+      />
+
+      <div class="d-flex justify-content-center align-items-center">
+        <button type="submit">Create Project</button>
+      </div>
+    </form>
+  </div>
+</div>
+{%endblock%}

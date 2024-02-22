@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/ADDStyle.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div  class="d-flex justify-content-center align-items-center  parent">
+    <div class="container parent mx-auto">
+        <form method='post' class='sytle_form' enctype='multipart/form-data'>
+            {% csrf_token %}
+            <h1 class='text-primary'>Create Category</h1>
+            <input type="text" name="categoryName" required placeholder="Category Name" />
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit bg-primary">Create Category</button>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="text-danger fs-3">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}
